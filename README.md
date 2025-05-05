@@ -129,7 +129,22 @@ Why it's important: Safeguards user privacy and prevents data breaches that coul
 What it is: Django's built-in CSRF tokens and template auto-escaping to prevent cross-site request forgery and scripting attacks.
 Why it's important: Ensures user sessions and browser-based actions are secure and cannot be hijacked or spoofed.
 
+     CI/CD Pipeline
+   
+   CI/CD (Continuous Integration and Continuous Deployment) pipelines are automated workflows that build, test, and deploy code whenever changes are made. CI focuses on integrating code into a shared repository and running automated tests, while CD ensures that tested code is automatically deployed to staging or production environments.
 
+Why They Are Important for This Project
+CI/CD pipelines help maintain code quality and accelerate development by:
+Catching bugs early through automated testing.
+Ensuring consistent deployments, reducing human error during updates.
+Speeding up release cycles, so new features and fixes reach users faster.
+This is especially crucial in a web app like Airbnb, where frequent updates and a stable user experience are essential.
+
+Tools to Use
+GitHub Actions – Automates testing and deployment directly from GitHub.
+Docker – Packages the app in containers for consistent development and production environments.
+Heroku / AWS / DigitalOcean – Can be used for hosting and deployment targets.
+pytest / Django Test Framework – For writing and running automated tests.
 
 
 
