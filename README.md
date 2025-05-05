@@ -2,7 +2,7 @@
 This project features the development of an airbnb platform for easy management of rental propetiesus
 Implimentation of MOdels and Api for easy access and security
 
-                     TEAM ROLES
+                     Team Roles
                      
              Project manager (PM)
 Makes sure a product or its part is delivered on time and within budget
