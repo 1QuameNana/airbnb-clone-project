@@ -102,34 +102,34 @@ Allows guests to leave feedback on their stay, rating the property and host. Thi
 
            API Security
    1. Authentication
-What it is: Verifying the identity of users through secure login/signup (e.g., password hashing, session or token-based authentication).
+ Verifying the identity of users through secure login/signup (e.g., password hashing, session or token-based authentication).
 Why it's important: Ensures only legitimate users access their accounts, protecting sensitive user data such as contact info, booking history, and payment details.
 
 2. Authorization
-What it is: Controlling access to resources and actions based on user roles (e.g., guest vs. host vs. admin).
+    Controlling access to resources and actions based on user roles (e.g., guest vs. host vs. admin).
 Why it's important: Prevents unauthorized access to critical features—e.g., a guest editing someone else's property, or a user accessing admin-only pages.
 
-3. Rate Limiting
-What it is: Limiting the number of requests a user or IP address can make in a given timeframe.
+4. Rate Limiting
+    Limiting the number of requests a user or IP address can make in a given timeframe.
 Why it's important: Protects against brute-force attacks on login pages and helps mitigate spam or DDoS-style abuse of public endpoints.
 
-4. Input Validation and Sanitization
-What it is: Ensuring all user input is validated and sanitized before being processed or stored.
+5. Input Validation and Sanitization
+    Ensuring all user input is validated and sanitized before being processed or stored.
 Why it's important: Prevents common web vulnerabilities such as SQL injection and XSS (cross-site scripting), which could compromise data integrity or expose user sessions.
 
-5. Secure Payment Handling
-What it is: Using HTTPS, secure payment gateways (e.g., Stripe), and never storing raw credit card data.
+6. Secure Payment Handling
+    Using HTTPS, secure payment gateways (e.g., Stripe), and never storing raw credit card data.
 Why it's important: Ensures financial transactions are encrypted and trusted, reducing the risk of fraud and complying with data protection regulations (e.g., PCI-DSS).
 
-6. Data Protection and Encryption
-What it is: Encrypting sensitive data at rest and in transit (e.g., passwords, personal info).
+7. Data Protection and Encryption
+Encrypting sensitive data at rest and in transit (e.g., passwords, personal info).
 Why it's important: Safeguards user privacy and prevents data breaches that could harm users and damage platform credibility.
 
-7. CSRF and XSS Protection
-What it is: Django's built-in CSRF tokens and template auto-escaping to prevent cross-site request forgery and scripting attacks.
+8. CSRF and XSS Protection
+    Django's built-in CSRF tokens and template auto-escaping to prevent cross-site request forgery and scripting attacks.
 Why it's important: Ensures user sessions and browser-based actions are secure and cannot be hijacked or spoofed.
 
-     CI/CD Pipeline
+         CI/CD Pipeline
    
    CI/CD (Continuous Integration and Continuous Deployment) pipelines are automated workflows that build, test, and deploy code whenever changes are made. CI focuses on integrating code into a shared repository and running automated tests, while CD ensures that tested code is automatically deployed to staging or production environments.
 
