@@ -83,7 +83,7 @@ Property ⟶ belongs to a User (host), has many Bookings, has many Reviews.
 Booking ⟶ made by a User, for a Property, has one Payment.
 Payment ⟶ for one Booking.
 
-              Features Breakdown
+      Feature Breakdown
 
 1. User Management
 Allows users to register, log in, and manage their profiles. Hosts and guests can be differentiated, with hosts able to list properties and guests able to book them. This system ensures secure access and personalized experiences.
