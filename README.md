@@ -25,16 +25,71 @@ Solves any technical problems emerging during the development lifecycle
               Database Design
   The Database design takes into account the Costumer , Properties, Bookings, Reviews, and Payments.
   
-                Costumers
-A Costumer/User cna only one or more properties, and can own multiple Reviews.
+              1. User
+(Assume extending Django's default AbstractUser or using User model)
+Fields:
+username (inherited)
+email
+is_host (BooleanField: to distinguish between guests and hosts)
+first_name
+last_name
 
-                Properties
-A property must have a single owner or booked by a single customer at a time
+Relationships:
+A User can own multiple Properties (if is_host is True).
+A User can make multiple Bookings.
+A User can leave multiple Reviews.
 
-               Reviews
-  Reviews are a many to many to customers, as every user is allowed to review a property 
-  
-              Payments
-The payments will be made  by Users during booking of any Property of thier choosing
-          
-   
+2. Review
+Fields:
+user (ForeignKey to User)
+property (ForeignKey to Property)
+rating (IntegerField: e.g., 1–5)
+comment (TextField)
+created_at (DateTimeField)
+
+Relationships:
+A Review is made by a User for a specific Property.
+A Property can have many Reviews.
+
+3. Booking
+Fields:
+user (ForeignKey to User)
+property (ForeignKey to Property)
+check_in (DateField)
+check_out (DateField)
+status (e.g., pending, confirmed, cancelled)
+
+Relationships:
+A Booking is made by a User for a Property.
+A Property can have many Bookings.
+A User can have many Bookings.
+
+       Payment
+Fields:
+booking (OneToOneField to Booking)
+amount (DecimalField)
+payment_date (DateTimeField)
+status (e.g., success, failed, pending)
+payment_method (CharField or ChoiceField)
+
+Relationships:
+A Payment is linked to exactly one Booking.
+A Booking must have one Payment (depending on your app's flow).
+
+Entity Relationship Summary:
+User ⟶ can be a guest or host.
+User ⟶ has many Bookings, many Reviews.
+Property ⟶ belongs to a User (host), has many Bookings, has many Reviews.
+Booking ⟶ made by a User, for a Property, has one Payment.
+Payment ⟶ for one Booking.
+
+
+
+
+
+
+
+
+
+
+
